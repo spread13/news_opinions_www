@@ -1,0 +1,68 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+
+<title>News Opinions</title>
+
+<link rel="stylesheet" href="css/layout.css">
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="img/favicon.ico">
+
+<script src="lib/jquery-1.10.2.min.js"></script>
+<script src="lib/json2.js"></script>
+<script src="lib/underscore-1.5.1.js"></script>
+<script src="lib/backbone-1.0.0.js"></script>
+<script src="js/index.js"></script>
+
+<script>
+  $(function(){
+    new App().run();
+  });
+</script>
+
+<!-- TEMPLATES -->
+
+<script type='text/template' id='tpl-login'>
+  <nav>
+    <a href='#' class='logo'>news opinions</a>
+    <a href='#signup' class='menu'>signup</a>
+  </nav>
+
+  <fieldset>
+    <input type='email' id='email' placeholder='Email'>
+    <input type='password' id='password' placeholder='Password'>
+
+    <a id='login' class='btn'>Login</a>
+  </fieldset>
+</script>
+
+
+<script type='text/template' id='tpl-signup'>
+  <nav>
+    <a href='#' class='logo'>news opinions</a>
+    <a href='#login' class='menu'>login</a>
+  </nav>
+
+  <fieldset>
+    <input type='email' id='email' placeholder='Email'>
+    <input type='password' id='password' placeholder='Password'>
+    <input type='password' id='passwordConfirm' placeholder='PasswordConfirm'>
+
+    <a id='signup' class='btn'>Signup</a>
+  </fieldset>
+</script>
+
+<script type='text/template' id='tpl-me'>
+  <nav>
+    <a href='#' class='logo'>news opinions</a>
+    <a id='logout' class='menu'>Logout</a>
+  </nav>
+
+  <div><%=typeof email != 'undefined' && email || ''%></div>
+</script>
+
+<body>
+  <div id='main' class='container'></div>
+</body>
+

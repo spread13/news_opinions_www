@@ -1,0 +1,25 @@
+{
+  "name": "news_opinions_www",
+  "version": "0.1.0",
+  "description": "news opinionsfrontend",
+  "homepage": "http://github.com/spread13/news_opinions_www",
+  "author": {
+    "name": "Joonil Kim",
+    "email": "somewehr@gmail.com"
+  },
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "coffee-script": "~1.6.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/spread13/news_opinions_www"
+  },
+  "bugs": {
+    "url": "http://github.com/spread13/news_opinions_www/issues"
+  },
+  "scripts": {
+    "compile": "coffee -o www/js -c src"
+  }
+}
