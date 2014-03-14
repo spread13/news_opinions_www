@@ -82,6 +82,15 @@ a.btn{
 /* #Page Styles
 ================================================== */
 
+.article{
+  margin-bottom:20px;
+  border-bottom:1px solid #eee;
+}
+.ln0{
+  cursor:pointer;
+  color: green;
+}
+
 /* #Media Queries
 ================================================== */
 .container{

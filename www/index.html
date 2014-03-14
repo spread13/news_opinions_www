@@ -23,6 +23,110 @@
 
 <!-- TEMPLATES -->
 
+<script type='text/template' id='tpl-spreads'>
+  <nav>
+    <a href='#' class='logo'>news opinions</a>
+    <a href='#feeds' class='menu'>Feeds</a>
+    <a href='#mySpreads' class='menu'>Spreads</a>
+    <a href='#articles' class='menu'>Articles</a>
+  </nav>
+
+  <div id='spreads'></div>
+</script>
+
+<script type='text/template' id='tpl-spread'>
+  <ul>
+    <li><%=obj.user_id%>
+    <li><%=obj.contents%>
+    <li><%=new Date(obj.updated_at).toLocaleString()%>
+  </ul>
+  <ul>
+    <li><%=obj.article_title%>
+    <li style='white-space:nowrap;overflow:hidden;'><a href='<%=obj.article_url%>' target='_blank'><%=obj.article_url%></a>
+    <li><%=obj.article_category%>
+    <li><%=new Date(obj.article_created_at).toLocaleString()%>
+  </ul>
+  <ul>
+    <li><%=obj.article_thumbnail%>
+    <li><%=obj.article_description%>
+  </ul>
+</script>
+
+
+<script type='text/template' id='tpl-articles'>
+  <nav>
+    <a href='#' class='logo'>news opinions</a>
+    <a href='#feeds' class='menu'>Feeds</a>
+    <a href='#mySpreads' class='menu'>Spreads</a>
+    <a href='#articles' class='menu'>Articles</a>
+  </nav>
+
+  <div id='articles'></div>
+</script>
+
+<script type='text/template' id='tpl-article'>
+  <ul>
+    <li><%=obj.title%>
+    <li style='white-space:nowrap;overflow:hidden;'><a href='<%=obj.url%>' target='_blank'><%=obj.url%></a>
+    <li><%=obj.category%>
+    <li><%=new Date(obj.created_at).toLocaleString()%>
+  </ul>
+  <ul>
+    <li><%=obj.thumbnail%>
+    <li><%=obj.description%>
+  </ul>
+  <ul>
+    <%if(typeof obj.user_id === 'undefined' || obj.user_id === null){%>
+      <li><a class='spread ln0'>spread</a>
+    <%}else{%>
+      <li><a class='spread ln0'>spreaded</a>
+    <%}%>
+  </ul>
+</script>
+
+<script type='text/template' id='tpl-feeds'>
+  <nav>
+    <a href='#' class='logo'>news opinions</a>
+    <a href='#newFeed' class='menu'>NewFeed</a>
+    <a href='#mySpreads' class='menu'>Spreads</a>
+    <a href='#articles' class='menu'>Articles</a>
+  </nav>
+
+  <div><a id='twitter' style='cursor:pointer'>add twitter</a></div>
+
+  <div id='feeds'></div>
+</script>
+
+<script type='text/template' id='tpl-feed'>
+  <ul>
+    <li><%=obj.id%>
+    <li><%=obj.url%>
+    <li><%=obj.rss%>
+    <li><%=obj.title%>
+    <li><%=obj.subscribed_at%>
+  </ul>
+</script>
+
+
+<script type='text/template' id='tpl-feed-edit'>
+  <nav>
+    <a href='#' class='logo'>news opinions</a>
+    <a href='#feeds' class='menu'>Feeds</a>
+    <a href='#mySpreads' class='menu'>Spreads</a>
+    <a href='#articles' class='menu'>Articles</a>
+  </nav>
+
+  <fieldset>
+    <input type='text' id='title' placeholder='Title'>
+    <input type='text' id='url' placeholder='URL'>
+    <input type='text' id='rss' placeholder='RSS'>
+
+    <a id='submit' class='btn'>Submit</a>
+  </fieldset>
+
+</script>
+
+
 <script type='text/template' id='tpl-login'>
   <nav>
     <a href='#' class='logo'>news opinions</a>
@@ -56,10 +160,13 @@
 <script type='text/template' id='tpl-me'>
   <nav>
     <a href='#' class='logo'>news opinions</a>
-    <a id='logout' class='menu'>Logout</a>
+    <a href='#feeds' class='menu'>Feeds</a>
+    <a href='#mySpreads' class='menu'>Spreads</a>
+    <a href='#articles' class='menu'>Articles</a>
   </nav>
 
   <div><%=typeof email != 'undefined' && email || ''%></div>
+  <div><a id='logout' class='menu'>Logout</a></div>
 </script>
 
 <body>
