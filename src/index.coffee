@@ -237,6 +237,11 @@ class ArticlesView extends Backbone.View
 
   initialize: ->
     @listenTo @model, 'sync', @render
+    self = @
+    $('body').mousewheel (e, delta) ->
+      if self.els?.scrolldiv
+        self.els.scrolldiv[0].scrollLeft -= delta*30
+        e.preventDefault()
 
   render: ->
     for v in @views
@@ -246,11 +251,13 @@ class ArticlesView extends Backbone.View
     @$el.html @template()(@model.toJSON())
 
     container = @$el.find('#articles')
-    for m in @model.models
+    for m,i in @model.models
       v = new ArticleView(model: m)
       v.render()
       @views.push v
       container.append v.el
+    container.css('width', @model.models.length*320)
+    @els = scrolldiv: @$el.find('.scrolldiv')
 
 
 class FeedView extends Backbone.View

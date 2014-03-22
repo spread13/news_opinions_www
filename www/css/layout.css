@@ -82,9 +82,18 @@ a.btn{
 /* #Page Styles
 ================================================== */
 
+.scrolldiv{
+  position:relative;
+  overflow-x:scroll;
+  overflow-y:hidden;
+}
+#articles{
+  margin-top:40px;
+}
 .article{
-  margin-bottom:20px;
-  border-bottom:1px solid #eee;
+  display:inline-block;
+  width:300px;
+  padding-right:20px;
 }
 .ln0{
   cursor:pointer;
@@ -95,8 +104,6 @@ a.btn{
 ================================================== */
 .container{
   position:relative;
-  width:520px;
-  margin:0 auto;
   padding:50px 0 0 0;
 }
 

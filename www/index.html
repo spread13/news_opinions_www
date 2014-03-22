@@ -10,6 +10,7 @@
 <link rel="shortcut icon" href="img/favicon.ico">
 
 <script src="lib/jquery-1.10.2.min.js"></script>
+<script src="lib/jquery.mousewheel.js"></script>
 <script src="lib/json2.js"></script>
 <script src="lib/underscore-1.5.1.js"></script>
 <script src="lib/backbone-1.0.0.js"></script>
@@ -61,7 +62,7 @@
     <a href='#articles' class='menu'>Articles</a>
   </nav>
 
-  <div id='articles'></div>
+  <div class='scrolldiv'><div id='articles'></div></div>
 </script>
 
 <script type='text/template' id='tpl-article'>
@@ -73,7 +74,7 @@
   </ul>
   <ul>
     <li><%=obj.thumbnail%>
-    <li><%=obj.description%>
+    <li><%=obj.description%>...
   </ul>
   <ul>
     <%if(typeof obj.user_id === 'undefined' || obj.user_id === null){%>
